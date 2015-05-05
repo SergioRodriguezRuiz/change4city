@@ -4,6 +4,10 @@
 require.config({
     deps: ['main'],
     paths: {
-        backbone: 'libs/backbone'
+        backbone: 'libs/backbone',
+        bootstrap: 'libs/bootstrap'
+    },
+    shim: {
+        'bootstrap': ['jquery']
     }
 })
