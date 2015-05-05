@@ -2,16 +2,16 @@ define([
     'jquery',
     'underscore',
     'backbone',
-    'text!template/layouts/default.html'
+    'text!templates/layouts/default.html'
 ], function ($, _, Backbone, Template) {
         var Layout = Backbone.View.extend({
             el: '#app',
             template: _.template(Template),
-            inicialize: function () {
+            initialize: function () {
                 this.render();
             },
             render: function () {
-                this.$el.hmtl(this.template());
+                this.$el.html(this.template());
                 return this;
             }
         });
