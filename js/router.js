@@ -1,17 +1,19 @@
 define([
     'jquery',
     'backbone',
-    'views/layouts/default'
-], function ($, Backbone, Layout) {
-        var curPage;
+    'app',
+    'views/layouts/default',
+    'views/dashboard'
+], function ($, Backbone, App, Layout, DashboardView) {
+    var curPage;
 
-        var Router = Backbone.Router.extend({
-            routes: {
-                '': 'defaultRoute'
-            },
-            defaultRoute: function() {
-                curPage = new Layout;
-            }
-        })
-    }
-)
+    var Router = Backbone.Router.extend({
+        routes: {
+            '': 'dashboardRoute'
+        },
+        dashboardRoute: function() {
+            App.curPage = new DashboardView;
+        }
+    });
+    return Router;
+});
