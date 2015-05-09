@@ -3,16 +3,16 @@ define([
     'backbone',
     'app',
     'views/layouts/default',
-    'views/dashboard'
-], function ($, Backbone, App, Layout, DashboardView) {
+    'views/login'
+], function ($, Backbone, App, Layout, LoginView) {
     var curPage;
 
     var Router = Backbone.Router.extend({
         routes: {
-            '': 'dashboardRoute'
+            '': 'loginRoute'
         },
-        dashboardRoute: function() {
-            App.curPage = new DashboardView;
+        loginRoute: function() {
+            App.curPage = new LoginView();
         }
     });
     return Router;
