@@ -1,11 +1,12 @@
 require([
     'jquery',
     'backbone',
+    'app',
     'views/layouts/default',
     'router'
-], function ($, Backbone, Layout, Router) {
+], function ($, Backbone, App, Layout, Router) {
     function start () {
-        var router = new Router();
+        App.router = new Router();
         var layout = new Layout();
         Backbone.history.start();
     }
