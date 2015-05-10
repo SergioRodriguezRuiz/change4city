@@ -2,9 +2,10 @@ define([
     'jquery',
     'underscore',
     'backbone',
+    'app',
     'text!templates/login.html',
     'text!templates/reminder.html'
-], function ($, _, Backbone, Template, ReminderTemplate) {
+], function ($, _, Backbone, App, Template, ReminderTemplate) {
     var Dashboard = Backbone.View.extend({
         el: '#content',
         template: _.template(Template),
@@ -21,6 +22,7 @@ define([
         },
         recovery: function () {
             console.log('recover psw');
+            App.router.navigate("login", {trigger: true});
         },
         events: {
             "click #login": "fieldValidation",
