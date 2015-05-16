@@ -6,6 +6,7 @@ require([
     'router'
 ], function ($, Backbone, App, Layout, Router) {
     function start () {
+        App.vent = _.extend({}, Backbone.Events);
         App.router = new Router();
         var layout = new Layout();
         Backbone.history.start();

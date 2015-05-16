@@ -49,6 +49,62 @@ input:focus {
 textarea {
     border: 0;
 }
+/* Navigation */
+#nav {
+    margin:0px;
+    padding:0px;
+}
+#nav li {
+    margin:0px;
+    padding:0px;
+    list-style:none;
+}
+#nav li a {
+    display:block;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #fff;
+    text-decoration:none;
+    padding:20px;
+    padding-left: 25px;
+    line-height:16px;
+}
+#nav li #toggle-menu {
+    background: transparent url(../img/icon_close_panel.png) no-repeat center center;
+    background-size: 25px 25px;
+    display: inline-block;
+    padding: 14px 20px;
+    margin: 18px 12px 0px 12px;
+    cursor: pointer;
+}
+#rightSidebarMenu {
+    right: -345px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 230px;
+    background: rgba(0,0,0,0.90);
+    z-index: 20;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    display:none;
+}
+#rightSidebarMenu.toggled {
+    right: 0;
+    position: fixed;
+    display:block;
+}
+#menuButton:after {
+    font-family: icomoon;
+    content: "\e61c";
+    position: relative;
+    float: right;
+    bottom: 33px;
+    font-size: medium;
+}
+/* ===================== */
 .logo {
     float: none;
     margin: 15% auto;
@@ -1005,14 +1061,6 @@ textarea {
 }
 #help {
     background-color: #f7f7f7;
-}
-.helpHeader:after {
-    font-family: icomoon;
-    content: "\e61c";
-    position: relative;
-    float: right;
-    bottom: 33px;
-    font-size: medium;
 }
 .helpVideo:first-child {
     margin-top: 70px;

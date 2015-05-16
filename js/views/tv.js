@@ -4,7 +4,7 @@ define([
     'backbone',
     'app',
     'text!templates/tv.html'
-], function ($, _, Backbone, App, Template) {
+],  function ($, _, Backbone, App, Template) {
     var Tv = Backbone.View.extend({
         el: '#content',
         template: _.template(Template),
@@ -35,11 +35,11 @@ define([
             console.log('show video');
         },
         showMenu: function () {
-            console.log('show menu');
+            $("#rightSidebarMenu").toggleClass('toggled');
         },
         events: {
-            'click .helpVideo': 'showVideo',
-            'click .helpHeader::after': 'showMenu'
+            'click .helpVideo' : 'showVideo',
+            'click #menuButton' : 'showMenu'
         },
         render: function () {
             this.$el.html(this.template());
