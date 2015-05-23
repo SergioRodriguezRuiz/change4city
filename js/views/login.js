@@ -6,7 +6,7 @@ define([
     'text!templates/login.html',
     'text!templates/reminder.html'
 ], function ($, _, Backbone, App, Template, ReminderTemplate) {
-    var Dashboard = Backbone.View.extend({
+    var Login = Backbone.View.extend({
         el: '#content',
         template: _.template(Template),
         initialize: function () {
@@ -34,6 +34,6 @@ define([
             return this;
         }
     });
-    return Dashboard;
+    return Login;
 });
 

@@ -3,23 +3,44 @@ define([
     'backbone',
     'app',
     'views/layouts/default',
+    'views/events',
+    'views/eventDetails',
     'views/login',
-    'views/tv'
-], function ($, Backbone, App, Layout, LoginView, TvView) {
+    'views/tv',
+    'views/petitionsList',
+    'views/petitionDetails'
+], function ($, Backbone, App, Layout, EventsView, EventDetailsView, LoginView, TvView,
+             PetitionsListView, PetitionDetailsView) {
     var curPage;
 
     var Router = Backbone.Router.extend({
         routes: {
-            '':         'loginRoute',
-            'login':    'loginRoute',
-            'tv':       'tvRoute'
+            '':                         'petitionsListRoute',
+            'login':                    'loginRoute',
+            'tv':                       'tvRoute',
+            'petitions':                'petitionsListRoute',
+            'petitions/:id/details':     'petitionDetailsRoute',
+            'events':                   'eventsRoute',
+            'events/:id/details':       'eventDetailsRoute'
 
+        },
+        eventsRoute: function() {
+            App.curPage = new EventsView();
+        },
+        eventDetailsRoute: function() {
+            App.curPage = new EventDetailsView();
         },
         loginRoute: function() {
             App.curPage = new LoginView();
         },
         tvRoute:    function()  {
             App.curPage = new TvView();
+        },
+        petitionsListRoute:  function() {
+            App.curPage = new PetitionsListView();
+        },
+        petitionDetailsRoute:   function() {
+            App.curPage = new PetitionDetailsView();
         }
     });
     return Router;

@@ -292,14 +292,6 @@ textarea {
     background-color: #ffffff;
     z-index: 1;
 }
-.notesHeader:after {
-    font-family: icomoon;
-    content: "\e61c";
-    position: relative;
-    float: right;
-    bottom: 33px;
-    font-size: medium;
-}
 .notesButton {
     position: fixed;
     bottom: 0px;
@@ -310,7 +302,7 @@ textarea {
 }
 .note {
     background-color: #ffffff;
-    margin-top: 5px;
+    margin-top: 25px;
     padding-top: 5px;
     border-radius: 5px;
 }
@@ -359,7 +351,7 @@ textarea {
     content: "\e616";
     position: relative;
     font-size: medium;
-    left: 80px;
+    left: 20px;
  }
 .noteClose:after {
     font-family: icomoon;
@@ -608,7 +600,7 @@ textarea {
 }
 /* ADVIES SPECIALISTEN */
 .adviceHeader {
-    height: 90px;
+    height: 60px;
     border-bottom: solid 2px #ffd006;
     text-align: center;
     padding-top: 15px;
@@ -617,16 +609,8 @@ textarea {
     position: fixed;
     left: 0px;
 }
-.adviceHeader:after {
-    font-family: icomoon;
-    content: "\e61c";
-    position: relative;
-    float: right;
-    bottom: 60px;
-    font-size: medium;
-}
 #adviceSelection {
-    margin-top: 10px;
+    margin-top: -20px;
     padding: 0;
 }
 #adviceSelection a {
@@ -831,7 +815,7 @@ textarea {
     height: 100px;
 }
 .event:first-child {
-    margin-top: 105px;
+    margin-top: 80px;
 }
 .event:last-child {
     margin-bottom: 5%;

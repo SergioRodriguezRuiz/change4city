@@ -3,25 +3,25 @@ define([
     'underscore',
     'backbone',
     'app',
-    'text!templates/nav.html'
-],  function ($, _, Backbone, App, Template) {
-    var Nav = Backbone.View.extend({
-        el: '#rightSidebarMenu',
+    'text!templates/events.html',
+], function ($, _, Backbone, App, Template) {
+    var Events = Backbone.View.extend({
+        el: '#content',
         template: _.template(Template),
         initialize: function () {
             this.render();
         },
-        toggleMenu: function () {
+        events: {
+            'click #menuButton' : 'showMenu'
+        },
+        showMenu: function () {
             $("#rightSidebarMenu").toggleClass('toggled');
         },
         render: function () {
             this.$el.html(this.template());
             return this;
-        },
-        events: {
-            'click #nav li a': 'toggleMenu',
-            'clock #toggle-menu': 'toggleMenu'
         }
     });
-    return Nav;
+    return Events;
 });
+

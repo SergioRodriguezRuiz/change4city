@@ -25,7 +25,7 @@ define([
                         var videoTitle = data[0].title;
                         var videoDesc = data[0].description;
                         $(vidHtml).find(".vidthumb").append('<img src="'+thumbSrc+'" width="80" height="60" />');
-                        $(vidHtml).find(".eventInfo").append('<h4 class="eventName">'+videoTitle+'</h4>');
+                        $(vidHtml).find(".eventInfo").append('<h4 class="eventName">'+videoTitle.slice(0,30) +'...</h4>');
                         $(vidHtml).find(".videoDesc").append('<p>'+videoDesc.slice(0,50)+'...</p>');
                     }
                 });
