@@ -49,7 +49,9 @@ define(function(require) {
         },
         // Global variables
         router : "",
-        curPage : ""
+        curPage : "",
+        apiUrl : "https://api.mongolab.com/api/1/databases/heroku_app37130502/collections/",
+        apiKey : "?apiKey=-gflAt0RCw7-SCTEpD5PETQ4FsSTwcbX"
     };
     return App;
 });

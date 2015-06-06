@@ -4,12 +4,14 @@ define([
     'backbone',
     'app',
     'text!templates/events.html',
-], function ($, _, Backbone, App, Template) {
+    'collections/event'
+], function ($, _, Backbone, App, Template, EventCollection) {
     var Events = Backbone.View.extend({
         el: '#content',
         template: _.template(Template),
         initialize: function () {
-            this.render();
+            var events = new EventCollection ();
+            events.bind('reset', this.render, this);
         },
         events: {
             'click #menuButton' : 'showMenu'
@@ -17,8 +19,10 @@ define([
         showMenu: function () {
             $("#rightSidebarMenu").toggleClass('toggled');
         },
-        render: function () {
-            this.$el.html(this.template());
+        render: function (events) {
+            this.$el.html(this.template({
+                events: events.models
+            }));
             return this;
         }
     });

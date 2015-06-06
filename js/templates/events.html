@@ -5,90 +5,34 @@
             <span id="menuButton"></span>
         </div>
         <div id="events" class="col-xs-12">
+            <%
+                var l = events.length;
+                while (l > 0) {
+                l--;
+                var date = events[l].attributes.date.split("/");
+                var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+                ];
+                var month = date[1];
+                month = parseInt(month);
+            %>
             <div class="col-xs-12 event">
                 <a href="/#/events/23/details" >
                     <div class="col-xs-4 eventDate">
-                        <span class="eventDay">04</span><span class="eventMonth">Apr</span><span class="eventYear">2015</span>
+                        <span class="eventDay"><%= date[0] %></span>
+                        <span class="eventMonth"><%= monthNames[month] %></span>
+                        <span class="eventYear"><%= date[2] %></span>
                     </div>
                     <div class="col-xs-8 eventInfo">
-                        <h4 class="eventName">Tripe A app launch</h4>
-                        <p class="eventCompany">NIBE</p>
-                        <p class="eventLocation">Amsterdam</p>
+                        <h4 class="eventName"><%= events[l].attributes.name.substring(0, 15) %></h4>
+                        <p class="eventCompany"><%= events[l].attributes.tipe %></p>
+                        <p class="eventLocation"><%= events[l].attributes.place %></p>
                     </div>
                 </a>
             </div>
-            <div class="col-xs-12 event">
-                <a href="event.html" >
-                    <div class="col-xs-4 eventDate">
-                        <span class="eventDay">23</span><span class="eventMonth">Apr</span><span class="eventYear">2015</span>
-                    </div>
-                    <div class="col-xs-8 eventInfo">
-                        <h4 class="eventName">Tripe A app launch</h4>
-                        <p class="eventCompany">NIBE</p>
-                        <p class="eventLocation">Amsterdam</p>
-                    </div>
-                </a>
-            </div>
-            <div class="col-xs-12 event">
-                <a href="event.html" >
-                    <div class="col-xs-4 eventDate">
-                        <span class="eventDay">19</span><span class="eventMonth">Jan</span><span class="eventYear">2015</span>
-                    </div>
-                    <div class="col-xs-8 eventInfo">
-                        <h4 class="eventName">Tripe A app launch</h4>
-                        <p class="eventCompany">NIBE</p>
-                        <p class="eventLocation">Amsterdam</p>
-                    </div>
-                </a>
-            </div>
-            <div class="col-xs-12 event">
-                <a href="event.html" >
-                    <div class="col-xs-4 eventDate">
-                        <span class="eventDay">19</span><span class="eventMonth">Jan</span><span class="eventYear">2015</span>
-                    </div>
-                    <div class="col-xs-8 eventInfo">
-                        <h4 class="eventName">Tripe A app launch</h4>
-                        <p class="eventCompany">NIBE</p>
-                        <p class="eventLocation">Amsterdam</p>
-                    </div>
-                </a>
-            </div>
-            <div class="col-xs-12 event">
-                <a href="event.html" >
-                    <div class="col-xs-4 eventDate">
-                        <span class="eventDay">19</span><span class="eventMonth">Jan</span><span class="eventYear">2015</span>
-                    </div>
-                    <div class="col-xs-8 eventInfo">
-                        <h4 class="eventName">Tripe A app launch</h4>
-                        <p class="eventCompany">NIBE</p>
-                        <p class="eventLocation">Amsterdam</p>
-                    </div>
-                </a>
-            </div>
-            <div class="col-xs-12 event">
-                <a href="event.html" >
-                    <div class="col-xs-4 eventDate">
-                        <span class="eventDay">19</span><span class="eventMonth">Jan</span><span class="eventYear">2015</span>
-                    </div>
-                    <div class="col-xs-8 eventInfo">
-                        <h4 class="eventName">Tripe A app launch</h4>
-                        <p class="eventCompany">NIBE</p>
-                        <p class="eventLocation">Amsterdam</p>
-                    </div>
-                </a>
-            </div>
-            <div class="col-xs-12 event">
-                <a href="event.html" >
-                    <div class="col-xs-4 eventDate">
-                        <span class="eventDay">19</span><span class="eventMonth">Jan</span><span class="eventYear">2015</span>
-                    </div>
-                    <div class="col-xs-8 eventInfo">
-                        <h4 class="eventName">Tripe A app launch</h4>
-                        <p class="eventCompany">NIBE</p>
-                        <p class="eventLocation">Amsterdam</p>
-                    </div>
-                </a>
-            </div>
+            <%
+                }
+            %>
         </div>
     </div>
 </div>
