@@ -6,7 +6,7 @@ define ([
 ], function(_, Backbone, App, EventModel) {
     var EventCollection = Backbone.Collection.extend({
         model: EventModel,
-        url: App.apiUrl+"events"+App.apiKey,
+        url: App.apiUrl+"events",
 
         initialize: function() {
             this.fetch({
@@ -20,15 +20,6 @@ define ([
                     console.log('ANy error');
                 }
             });
-        },
-        addOne: function(event) {
-            new EventModel({ model: event });
-        },
-        addAll: function() {
-            this.each(this.addOne, this);
-        },
-        removeAll: function() {
-            this.reset();
         }
     });
     return EventCollection;

@@ -17,15 +17,15 @@
                 month = parseInt(month);
             %>
             <div class="col-xs-12 event">
-                <a href="/#/events/23/details" >
+                <a href="/#/events/<%= events[l].attributes._id %>/details" >
                     <div class="col-xs-4 eventDate">
                         <span class="eventDay"><%= date[0] %></span>
-                        <span class="eventMonth"><%= monthNames[month] %></span>
+                        <span class="eventMonth"><%= monthNames[--month] %></span>
                         <span class="eventYear"><%= date[2] %></span>
                     </div>
                     <div class="col-xs-8 eventInfo">
                         <h4 class="eventName"><%= events[l].attributes.name.substring(0, 15) %></h4>
-                        <p class="eventCompany"><%= events[l].attributes.tipe %></p>
+                        <p class="eventCompany"><%= events[l].attributes.type %></p>
                         <p class="eventLocation"><%= events[l].attributes.place %></p>
                     </div>
                 </a>

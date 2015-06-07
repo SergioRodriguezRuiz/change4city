@@ -27,8 +27,8 @@ define([
         eventsRoute: function() {
             App.curPage = new EventsView();
         },
-        eventDetailsRoute: function() {
-            App.curPage = new EventDetailsView();
+        eventDetailsRoute: function(id) {
+            App.curPage = new EventDetailsView({id: id});
         },
         loginRoute: function() {
             App.curPage = new LoginView();
