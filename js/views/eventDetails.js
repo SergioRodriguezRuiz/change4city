@@ -25,7 +25,18 @@ define([
         },
 
         showMap: function () {
-            this.render(this.model, true);
+            var lon, lat;
+            var dis = this;
+            function  onSuccess(position) {
+                lon = position.coords.longitude;
+                lat = position.coords.latitude;
+
+                dis.render(dis.model, true, lon, lat);
+            }
+            function onError() {
+                console.log('nada');
+            }
+            navigator.geolocation.getCurrentPosition(onSuccess, onError);
 
         },
 
@@ -35,10 +46,12 @@ define([
             "click .eventDocumentLink" : "showMap"
         },
 
-        render: function (event, option) {
+        render: function (event, option, latitude, longitude) {
             this.$el.html(this.template({
                 event: event.attributes,
-                map: option
+                map: option,
+                lat: latitude,
+                lon: longitude
             }));
             return this;
         }
