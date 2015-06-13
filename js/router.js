@@ -39,8 +39,8 @@ define([
         petitionsListRoute:  function() {
             App.curPage = new PetitionsListView();
         },
-        petitionDetailsRoute:   function() {
-            App.curPage = new PetitionDetailsView();
+        petitionDetailsRoute:   function(id) {
+            App.curPage = new PetitionDetailsView({id: id});
         }
     });
     return Router;

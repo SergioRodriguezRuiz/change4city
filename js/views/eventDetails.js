@@ -30,8 +30,9 @@ define([
             function  onSuccess(position) {
                 lon = position.coords.longitude;
                 lat = position.coords.latitude;
-
                 dis.render(dis.model, true, lon, lat);
+                $(".eventDocumentLink").addClass("act");
+                $(".eventDescriptionLink").removeClass("act");
             }
             function onError() {
                 console.log('nada');

@@ -27,7 +27,8 @@
                 <p><%= event.description %></p>
             </div>
             <% } else { %>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m26!1m12!1m3!1d3176.776021714082!2d-3.6551807027064345!3d37.22929162763221!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m11!3e6!4m3!3m2!1d<%= lon %>!2d<%= lat %>!4m5!1s0xd71fde53dcabc1b%3A0xd0dbbc26b4ca9455!2sPaseo+de+Col%C3%B3n%2C+5+18220+burro!3m2!1d25.2291568!2d-18.6538445999999998!5e0!3m2!1ses!2ses!4v1433705184582" width="600" height="450" frameborder="0" style="border:0"></iframe>            <p><%= lat %></p>
+            <iframe id="mapEvent" src="https://www.google.com/maps/embed?pb=!1m26!1m12!1m3!1d3176.776021714082!2d-3.6551807027064345!3d37.22929162763221!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m11!3e6!4m3!3m2!1d<%= lon %>!2d<%= lat %>!4m5!1s0xd71fde53dcabc1b%3A0xd0dbbc26b4ca9455!2sPaseo+de+Col%C3%B3n%2C+5+18220+burro!3m2!1d25.2291568!2d-18.6538445999999998!5e0!3m2!1ses!2ses!4v1433705184582" width="" height="" frameborder="0" style="border:0"></iframe>
+            <p><%= lat %></p>
             <% } %>
         </div>
         <div class="col-xs-12 eventFooter">

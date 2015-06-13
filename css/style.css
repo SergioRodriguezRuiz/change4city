@@ -283,6 +283,13 @@ textarea {
     position: absolute;
     height: 90%;
 }
+.noteClosed {
+    background-color: #ffffff;
+    margin-top: 25px;
+    padding-top: 5px;
+    border-radius: 5px;
+    opacity: .2;
+}
 .notesHeader {
     position: fixed;
     height: 60px;
@@ -292,6 +299,36 @@ textarea {
     background-color: #ffffff;
     z-index: 1;
 }
+.notesButtonYes {
+    position: fixed;
+    bottom: 0px;
+    background: #4CAF50;
+    width: 50%;
+    left: 50%;
+    color: #000000;
+    display: initial;
+}
+.notesButtonNo {
+    position: fixed;
+    bottom: 0px;
+    background: #F44336;
+    width: 50%;
+    color: #000000;
+    display: initial;
+}
+.notesButtonNo.act {
+
+}
+.notesButtonNo.dis {
+    opacity: .2;
+}
+.notesButtonYes.dis {
+    opacity: .2;
+}
+.notesButtonYes.act {
+    font-weight: bold;
+}
+
 .notesButton {
     position: fixed;
     bottom: 0px;
@@ -325,6 +362,9 @@ textarea {
     color: #00A2D2;
     margin-right: 5px;
     font-weight: bold;
+}
+.note span.neg {
+    color: rgba(255, 0, 15, 0.65);
 }
 .note:last-child {
     margin-bottom: 65px;
@@ -860,6 +900,12 @@ textarea {
     font-weight: bold;
     position: relative;
     top: 10px;
+}
+#mapEvent {
+    width: 100%;
+    height: 360px;
+    position: relative;
+    top: 100px;
 }
 .eventCompany {
     color: #CACACA;
