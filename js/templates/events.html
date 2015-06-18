@@ -9,7 +9,7 @@
                 var l = events.length;
                 while (l > 0) {
                 l--;
-                var date = events[l].attributes.date.split("/");
+                var date = events[l].attributes.date.split("-");
                 var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
                 "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
                 ];
@@ -19,9 +19,9 @@
             <div class="col-xs-12 event">
                 <a href="#/events/<%= events[l].attributes._id %>/details" >
                     <div class="col-xs-4 eventDate">
-                        <span class="eventDay"><%= date[0] %></span>
+                        <span class="eventDay"><%= date[2] %></span>
                         <span class="eventMonth"><%= monthNames[--month] %></span>
-                        <span class="eventYear"><%= date[2] %></span>
+                        <span class="eventYear"><%= date[0] %></span>
                     </div>
                     <div class="col-xs-8 eventInfo">
                         <h4 class="eventName"><%= events[l].attributes.name.substring(0, 15) %></h4>

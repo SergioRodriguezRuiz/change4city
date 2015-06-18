@@ -5,16 +5,16 @@
             <div class="eventHeader">
                 <span id="eventClose" class="eventClose"></span>
                 <%
-                var date = event.date.split("/");
+                var date = event.date.split("-");
                 var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
                 "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
                 ];
                 month = parseInt(date[1]);
                 %>
                 <div class="col-xs-6 eventDate">
-                    <span class="eventDay"><%= date[0] %></span>
+                    <span class="eventDay"><%= date[2] %></span>
                     <span class="eventMonth"><%= monthNames[--month] %></span><br>
-                    <span class="eventYear"><%= date[2] %></span>
+                    <span class="eventYear"><%= date[0] %></span>
                 </div>
             </div>
             <div class="col-xs-12 eventDetails">
