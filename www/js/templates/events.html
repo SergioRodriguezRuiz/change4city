@@ -1,0 +1,38 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12 adviceHeader">
+            <h4>Proximos Eventos</h4>
+            <span id="menuButton"></span>
+        </div>
+        <div id="events" class="col-xs-12">
+            <%
+                var l = events.length;
+                while (l > 0) {
+                l--;
+                var date = events[l].attributes.date.split("-");
+                var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+                ];
+                var month = date[1];
+                month = parseInt(month);
+            %>
+            <div class="col-xs-12 event">
+                <a href="#/events/<%= events[l].attributes._id %>/details" >
+                    <div class="col-xs-4 eventDate">
+                        <span class="eventDay"><%= date[2] %></span>
+                        <span class="eventMonth"><%= monthNames[--month] %></span>
+                        <span class="eventYear"><%= date[0] %></span>
+                    </div>
+                    <div class="col-xs-8 eventInfo">
+                        <h4 class="eventName"><%= events[l].attributes.name.substring(0, 15) %></h4>
+                        <p class="eventCompany"><%= events[l].attributes.type %></p>
+                        <p class="eventLocation"><%= events[l].attributes.place %></p>
+                    </div>
+                </a>
+            </div>
+            <%
+                }
+            %>
+        </div>
+    </div>
+</div>
