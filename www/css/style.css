@@ -904,15 +904,16 @@ textarea {
 }
 #mapEvent {
     width: 100%;
-    height: 360px;
+    height: 600px;
     position: relative;
     top: 100px;
+    top: 0px;
 }
 .eventCompany {
     color: #CACACA;
 }
 #eventDetails {
-
+    padding: 0;
 }
 .eventHeader {
     background-color: #0082C5;

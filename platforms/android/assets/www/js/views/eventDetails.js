@@ -25,14 +25,22 @@ define([
         },
 
         showMap: function () {
-            var lon, lat;
+            var lon, lat, lonEnd, latEnd;
             var dis = this;
             function  onSuccess(position) {
-                lon = position.coords.longitude;
-                lat = position.coords.latitude;
-                dis.render(dis.model, true, lon, lat);
-                $(".eventDocumentLink").addClass("act");
-                $(".eventDescriptionLink").removeClass("act");
+                console.log(dis.model.attributes.place);
+                var geocoder = new google.maps.Geocoder();
+                geocoder.geocode({ 'address': dis.model.attributes.place},
+                    function (result, status) {
+                        latEnd = result[0].geometry.location.A;
+                        lonEnd = result[0].geometry.location.F;
+                        lon = position.coords.longitude;
+                        lat = position.coords.latitude;
+                        console.log(latEnd);console.log(lonEnd);
+                        dis.render(dis.model, true, lon, lat, latEnd, lonEnd);
+                        $(".eventDocumentLink").addClass("act");
+                        $(".eventDescriptionLink").removeClass("act");
+                    });
             }
             function onError() {
                 console.log('nada');
@@ -47,12 +55,14 @@ define([
             "click .eventDocumentLink" : "showMap"
         },
 
-        render: function (event, option, latitude, longitude) {
+        render: function (event, option, latitude, longitude, latitudeEnd, longitudeEnd) {
             this.$el.html(this.template({
                 event: event.attributes,
                 map: option,
                 lat: latitude,
-                lon: longitude
+                lon: longitude,
+                latEnd: latitudeEnd,
+                lonEnd: longitudeEnd
             }));
             return this;
         }
