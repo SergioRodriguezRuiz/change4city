@@ -1105,3 +1105,26 @@ textarea {
 .vidthumb {
     margin-top: 5%;
 }
+#videoVimeo {
+    padding: 0;
+    top: 100px;
+}
+#vid {
+    width: 100%;
+    height: 400px
+}
+.helpHeaderVideo {
+    position: fixed;
+    height: 99px;
+    border-bottom: solid 2px #ffd006;
+    text-align: center;
+    padding-top: 15px;
+    background-color: #ffffff;
+    z-index: 1;
+}
+.helpHeaderVideo h4 {
+    width: 90%;
+}
+.videoDescription {
+    top: 100px;
+}

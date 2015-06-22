@@ -31,8 +31,10 @@ define([
                 });
             });
         },
-        showVideo: function () {
-            console.log('show video');
+        showVideo: function (ev) {
+            var id = $(ev.currentTarget).attr("rel");
+            console.log('show video',id);
+            App.router.navigate("video/"+id, {trigger: true});
         },
         showMenu: function () {
             $("#rightSidebarMenu").toggleClass('toggled');

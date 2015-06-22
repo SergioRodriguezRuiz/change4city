@@ -7,9 +7,10 @@ define([
     'views/eventDetails',
     'views/login',
     'views/tv',
+    'views/video',
     'views/petitionsList',
     'views/petitionDetails'
-], function ($, Backbone, App, Layout, EventsView, EventDetailsView, LoginView, TvView,
+], function ($, Backbone, App, Layout, EventsView, EventDetailsView, LoginView, TvView, VideoView,
              PetitionsListView, PetitionDetailsView) {
     var curPage;
 
@@ -18,6 +19,7 @@ define([
             '':                         'petitionsListRoute',
             'login':                    'loginRoute',
             'tv':                       'tvRoute',
+            'video/:src':               'videoRoute',
             'petitions':                'petitionsListRoute',
             'petitions/:id/details':     'petitionDetailsRoute',
             'events':                   'eventsRoute',
@@ -35,6 +37,9 @@ define([
         },
         tvRoute:    function()  {
             App.curPage = new TvView();
+        },
+        videoRoute: function(src) {
+            App.currPage = new VideoView({src: src});
         },
         petitionsListRoute:  function() {
             App.curPage = new PetitionsListView();

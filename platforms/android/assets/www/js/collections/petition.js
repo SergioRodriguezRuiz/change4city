@@ -12,6 +12,7 @@ define ([
             this.fetch({
                 url: this.url,
                 type: "GET",
+                dataType: 'jsonp',
                 reset: true,
                 success: function(collection) {
                     console.log(collection);
