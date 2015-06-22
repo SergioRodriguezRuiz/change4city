@@ -9,6 +9,7 @@ define([
         el: '#content',
         template: _.template(Template),
         initialize: function (options) {
+            this.idViedeo = options.id;
             this.getDescription(options);
         },
         getDescription: function (op) {
@@ -29,8 +30,13 @@ define([
             $("#rightSidebarMenu").toggleClass('toggled');
         },
 
+        shareVideo: function() {
+            window.plugins.socialsharing.share('Compartir video', null, null, 'https://vimeo.com/'+this.idViedeo);
+        },
+
         events: {
-            'click #menuButton' : 'showMenu'
+            'click #menuButton' : 'showMenu',
+            //'click #shareVideo' : 'shareVideo'
         },
         render: function (src, t, d) {
             console.log(src);
