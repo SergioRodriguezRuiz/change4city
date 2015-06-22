@@ -5,7 +5,7 @@ define([
     'app',
     'text!templates/video.html'
 ],  function ($, _, Backbone, App, Template) {
-    var Tv = Backbone.View.extend({
+    var video = Backbone.View.extend({
         el: '#content',
         template: _.template(Template),
         initialize: function (options) {
@@ -48,5 +48,5 @@ define([
             return this;
         }
     });
-    return Tv;
+    return video;
 });

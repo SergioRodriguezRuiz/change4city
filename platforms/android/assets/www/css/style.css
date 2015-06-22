@@ -18,6 +18,7 @@ body {
     background-color:#ffffff;
     overflow-x: hidden;
     height: 100%;
+    background-repeat: no-repeat;
 }
 p {
     font-size: small;
@@ -1127,4 +1128,11 @@ textarea {
 }
 .videoDescription {
     top: 100px;
+}
+.imgLoad {
+    text-align: center;
+    margin-top: 60%;
+}
+.imgLoad img {
+    width: 40px;
 }

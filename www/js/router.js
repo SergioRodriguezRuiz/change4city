@@ -3,6 +3,7 @@ define([
     'backbone',
     'app',
     'views/layouts/default',
+    'views/initial',
     'views/events',
     'views/eventDetails',
     'views/login',
@@ -10,13 +11,13 @@ define([
     'views/video',
     'views/petitionsList',
     'views/petitionDetails'
-], function ($, Backbone, App, Layout, EventsView, EventDetailsView, LoginView, TvView, VideoView,
+], function ($, Backbone, App, Layout, InitialScreenView, EventsView, EventDetailsView, LoginView, TvView, VideoView,
              PetitionsListView, PetitionDetailsView) {
     var curPage;
 
     var Router = Backbone.Router.extend({
         routes: {
-            '':                         'petitionsListRoute',
+            '':                         'initialScreenRoute',
             'login':                    'loginRoute',
             'tv':                       'tvRoute',
             'video/:src':               'videoRoute',
@@ -25,6 +26,9 @@ define([
             'events':                   'eventsRoute',
             'events/:id/details':       'eventDetailsRoute'
 
+        },
+        initialScreenRoute: function() {
+            App.curPage = new InitialScreenView();
         },
         eventsRoute: function() {
             App.curPage = new EventsView();
