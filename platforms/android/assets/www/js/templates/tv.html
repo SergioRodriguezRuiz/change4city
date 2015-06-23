@@ -5,7 +5,16 @@
             <span id="menuButton"></span>
         </div>
         <div id="help" class="col-xs-12">
-            <div rel="109225430" class="col-xs-12 helpVideo">
+            <%
+            var l = videos.length;
+            while (l > 0) {
+            l--;
+            var id = videos[l].attributes.url;
+            console.log(id);
+            id = id.split("/");
+            id = id[id.length-1]
+            %>
+            <div rel="<%= id %>" class="col-xs-12 helpVideo">
                 <div class="col-xs-4 vidthumb">
 
                 </div>
@@ -16,61 +25,9 @@
 
                 </div>
             </div>
-            <div rel="109226835" class="col-xs-12 helpVideo">
-                <div class="col-xs-4 vidthumb">
-
-                </div>
-                <div class="col-xs-8 eventInfo">
-
-                </div>
-                <div class="col-xs-8 videoDesc">
-
-                </div>
-            </div>
-            <div rel="109002351" class="col-xs-12 helpVideo">
-                <div class="col-xs-4 vidthumb">
-
-                </div>
-                <div class="col-xs-8 eventInfo">
-
-                </div>
-                <div class="col-xs-8 videoDesc">
-
-                </div>
-            </div>
-            <div rel="109223971" class="col-xs-12 helpVideo">
-                <div class="col-xs-4 vidthumb">
-
-                </div>
-                <div class="col-xs-8 eventInfo">
-
-                </div>
-                <div class="col-xs-8 videoDesc">
-
-                </div>
-            </div>
-            <div rel="109223614" class="col-xs-12 helpVideo">
-                <div class="col-xs-4 vidthumb">
-
-                </div>
-                <div class="col-xs-8 eventInfo">
-
-                </div>
-                <div class="col-xs-8 videoDesc">
-
-                </div>
-            </div>
-            <div rel="109221735" class="col-xs-12 helpVideo">
-                <div class="col-xs-4 vidthumb">
-
-                </div>
-                <div class="col-xs-8 eventInfo">
-
-                </div>
-                <div class="col-xs-8 videoDesc">
-
-                </div>
-            </div>
+            <%
+            }
+            %>
         </div>
     </div>
 </div>

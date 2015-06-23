@@ -3,16 +3,19 @@ define([
     'underscore',
     'backbone',
     'app',
+    'collections/videos',
     'text!templates/tv.html'
-],  function ($, _, Backbone, App, Template) {
+],  function ($, _, Backbone, App, VideosCollection, Template) {
     var Tv = Backbone.View.extend({
         el: '#content',
         template: _.template(Template),
         initialize: function () {
-            this.render();
-            this.getThumb();
+            var videos = new VideosCollection;
+            videos.bind('reset', this.render, this);
+
         },
         getThumb: function () {
+            console.log('fdf');
             $(".helpVideo").each(function (i) {
                 var video = $(this).attr("rel");
                 var vidHtml = $(this);
@@ -43,8 +46,11 @@ define([
             'click .helpVideo' : 'showVideo',
             'click #menuButton' : 'showMenu'
         },
-        render: function () {
-            this.$el.html(this.template());
+        render: function (videos) {
+            this.$el.html(this.template({
+                videos: videos.models
+            }));
+            this.getThumb();
             return this;
         }
     });

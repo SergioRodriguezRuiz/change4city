@@ -282,7 +282,7 @@ textarea {
     background-color: #f7f7f7;
     top: 60px;
     position: absolute;
-    height: 90%;
+    height: 100%;
 }
 .noteClosed {
     background-color: #ffffff;
@@ -846,10 +846,10 @@ textarea {
 }
 /* EVENT */
 #events {
-    background-color: #f7f7f7;
+
 }
 .event {
-    background-color: #ffffff;
+    background-color: #f7f7f7;
     margin-top: 5px;
     padding: 0;
     border-radius: 5px;
@@ -1092,13 +1092,12 @@ textarea {
     z-index: 1;
 }
 #help {
-    background-color: #f7f7f7;
 }
 .helpVideo:first-child {
     margin-top: 70px;
 }
 .helpVideo {
-    background-color: #ffffff;
+    background-color: #f7f7f7;
     margin-top: 5px;
     padding: 0;
     border-radius: 5px;

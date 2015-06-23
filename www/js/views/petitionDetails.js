@@ -46,7 +46,7 @@ define([
             $("#rightSidebarMenu").toggleClass('toggled');
         },
         closeNote: function() {
-            window.history.back();
+            App.router.navigate("petitions", {trigger: true});
         },
         render: function (petition) {
             var local = localStorage.getItem(this.model.id);
